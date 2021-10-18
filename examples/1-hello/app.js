@@ -1,0 +1,16 @@
+
+
+const result = document.querySelector('.result');
+const url = '/.netlify/functions'
+const fetchData = async() => {
+try {
+ 
+// const {data} = await axios.get(`${url}/1-hello`);
+const { data } = await axios.get(`/api/1-hello`)
+result.textContent= data
+
+} catch (error) {
+console.log(error.response.data);
+}
+}
+fetchData();
